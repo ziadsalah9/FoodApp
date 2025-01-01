@@ -1,0 +1,36 @@
+
+import mongoose from "mongoose";
+
+
+const carDataSchema = new mongoose.Schema({
+
+})
+const userschema = new mongoose.Schema({
+
+
+    name: {
+        type:String,
+        required : true
+    },
+
+    
+    email: {
+        type:String,
+        required : true
+    },
+    password: {
+        type:String,
+        required : true
+    },
+    cartData :{
+        type:Object ,
+        default :{} 
+    }
+
+
+
+},{minimize:false}) 
+
+
+const userModel = mongoose.models.user || mongoose.model("user",userschema);
+export default userModel;
